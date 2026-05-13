@@ -1,329 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KYC Documents Received</title>
-    <style type="text/css">
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+<!-- KYC Documents Submitted - Content Fragment -->
+<!-- Injected into base-template.html via {{content}} -->
 
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #f0fdfa;
-        font-family: "Inter", Arial, sans-serif;
-      }
-      .wrapper {
-        width: 100%;
-        background-color: #f0fdfa;
-      }
-      .container {
-        padding: 60px 0;
-      }
-      .main-table {
-        width: 600px;
-        background-color: #ffffff;
-        border-radius: 40px;
-        border: 1px solid #ccfbf1;
-        box-shadow: 0 30px 60px -12px rgba(20, 184, 166, 0.12);
-        margin: 0 auto;
-        overflow: hidden;
-      }
+<!-- Content -->
+<tr>
+  <td style="padding: 48px; text-align: center;">
+    <h1 style="font-size: 32px; letter-spacing: -1px; text-align: center;">Documents Received</h1>
+    <p class="p-main" style="font-size: 16px; line-height: 1.7; margin-bottom: 48px; text-align: center;">
+      Thank you for submitting your identity verification documents.
+      Our compliance team is now reviewing your application.
+    </p>
 
-      /* Header */
-      .header-logo {
-        padding: 48px 48px 0;
-        text-align: center;
-      }
-      .logo-link {
-        text-decoration: none;
-        font-size: 24px;
-        font-weight: 800;
-        color: #0f172a;
-        letter-spacing: -0.5px;
-        display: inline-block;
-      }
-      .logo-teal {
-        color: #14b8a6;
-        margin-left: 2px;
-      }
-
-      /* Content Area */
-      .content-padding {
-        padding: 48px;
-        text-align: center;
-      }
-      .h1-title {
-        font-size: 32px;
-        font-weight: 800;
-        color: #0f172a;
-        margin: 0 0 16px;
-        letter-spacing: -1px;
-      }
-      .p-main {
-        font-size: 16px;
-        line-height: 1.7;
-        color: #475569;
-        margin: 0 0 48px;
-      }
-
-      /* Timeline */
-      .timeline-table {
-        width: 100%;
-        margin-bottom: 48px;
-      }
-      .timeline-step {
-        width: 33.33%;
-        vertical-align: top;
-      }
-      .dot-container {
-        height: 40px;
-        position: relative;
-      }
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 6px;
-        margin: 0 auto;
-        z-index: 2;
-        position: relative;
-      }
-      .dot-active {
-        background-color: #14b8a6;
-        box-shadow: 0 0 0 4px #ccfbf1;
-      }
-      .dot-pending {
-        background-color: #e2e8f0;
-      }
-      .line {
-        height: 2px;
-        background-color: #e2e8f0;
-        position: absolute;
-        top: 5px;
-        width: 100%;
-        z-index: 1;
-      }
-      .step-label {
-        font-size: 13px;
-        font-weight: 700;
-        color: #0f172a;
-        margin-top: 12px;
-      }
-      .step-status {
-        font-size: 11px;
-        color: #94a3b8;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-      }
-
-      /* Info Box */
-      .info-box {
-        background-color: #f0fdfa;
-        border: 1px solid #ccfbf1;
-        border-radius: 24px;
-        padding: 32px;
-        text-align: left;
-      }
-      .info-p {
-        font-size: 15px;
-        line-height: 1.6;
-        font-weight: 600;
-        color: #0f766e;
-        margin: 0;
-      }
-
-      /* Signature */
-      .sig-container {
-        padding: 0 48px 48px;
-      }
-      .sig-table {
-        width: 100%;
-      }
-      .sig-left {
-        padding-bottom: 16px;
-        text-align: left;
-      }
-      .sig-right {
-        text-align: right;
-      }
-      .sig-name {
-        font-size: 15px;
-        font-weight: 700;
-        color: #0f172a;
-        margin: 0 0 2px;
-      }
-      .sig-email a {
-        color: #14b8a6;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .sig-closing {
-        font-size: 14px;
-        color: #64748b;
-        margin: 0;
-      }
-      .sig-team {
-        font-size: 14px;
-        font-weight: 700;
-        color: #0f172a;
-        margin: 0;
-      }
-
-      /* Footer */
-      .copyright {
-        font-size: 12px;
-        color: #cbd5e1;
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-align: center;
-      }
-
-      @media only screen and (max-width: 600px) {
-        .main-table {
-          width: 100% !important;
-          border-radius: 0 !important;
-        }
-        .content-padding {
-          padding: 40px 24px !important;
-        }
-      }
-
-      table {
-        border-collapse: collapse;
-      }
-    </style>
-    <!--[if mso]>
-      <style type="text/css">
-        table {
-          mso-table-lspace: 0pt !important;
-          mso-table-rspace: 0pt !important;
-        }
-      </style>
-    <![endif]-->
-  </head>
-  <body>
-    <table
-      role="presentation"
-      class="wrapper"
-      border="0"
-      cellspacing="0"
-      cellpadding="0"
-    >
+    <!-- Timeline -->
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 48px;">
       <tr>
-        <td align="center" class="container">
-          <table
-            class="main-table"
-            role="presentation"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-          >
-            <!-- Header -->
-            <tr>
-              <td class="header-logo">
-                <a href="#" class="logo-link">
-                  Setup<span class="logo-teal">FX</span>
-                </a>
-              </td>
-            </tr>
-
-            <!-- Body -->
-            <tr>
-              <td class="content-padding">
-                <h1 class="h1-title">Documents Received</h1>
-                <p class="p-main">
-                  Thank you for submitting your identity verification documents.
-                  Our compliance team is now reviewing your application.
-                </p>
-
-                <!-- Timeline -->
-                <table
-                  role="presentation"
-                  class="timeline-table"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                >
-                  <tr>
-                    <td class="timeline-step">
-                      <div class="dot-container">
-                        <div class="line" style="left: 50%"></div>
-                        <div class="dot dot-active"></div>
-                      </div>
-                      <div class="step-label">Submitted</div>
-                      <div class="step-status">Complete</div>
-                    </td>
-                    <td class="timeline-step">
-                      <div class="dot-container">
-                        <div class="line"></div>
-                        <div class="dot dot-active"></div>
-                      </div>
-                      <div class="step-label">Reviewing</div>
-                      <div class="step-status" style="color: #14b8a6">
-                        In Progress
-                      </div>
-                    </td>
-                    <td class="timeline-step">
-                      <div class="dot-container">
-                        <div class="line" style="right: 50%"></div>
-                        <div class="dot dot-pending"></div>
-                      </div>
-                      <div class="step-label">Verified</div>
-                      <div class="step-status">Pending</div>
-                    </td>
-                  </tr>
-                </table>
-
-                <div class="info-box">
-                  <p class="info-p">
-                    You'll receive an email as soon as the review is complete.
-                    Usually, this takes less than 24 hours.
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Signature -->
-            <tr>
-              <td class="sig-container">
-                <table
-                  role="presentation"
-                  class="sig-table"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                >
-                  <tr>
-                    <td class="sig-left">
-                      <p class="sig-name"></p>
-                      <p class="sig-email">
-                        <a href="mailto:chetan@setupfx.com"
-                          >chetan@setupfx.com</a
-                        >
-                      </p>
-                      <p class="sig-closing">Happy investing</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="sig-right">
-                      <p class="sig-team">Team : SetupFX Limited</p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- Footer -->
-            <tr>
-              <td style="padding: 0 48px 48px">
-                <p class="copyright">&copy; 2026 SETUPFX LIMITED</p>
-              </td>
-            </tr>
-          </table>
+        <td style="width: 33.33%; vertical-align: top; text-align: center;">
+          <div style="height: 40px; position: relative;">
+            <div style="height: 2px; background-color: #e2e8f0; position: absolute; top: 5px; left: 50%; width: 50%; z-index: 1;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 6px; margin: 0 auto; z-index: 2; position: relative; background-color: #14b8a6; box-shadow: 0 0 0 4px #ccfbf1;"></div>
+          </div>
+          <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 12px;">Submitted</div>
+          <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Complete</div>
+        </td>
+        <td style="width: 33.33%; vertical-align: top; text-align: center;">
+          <div style="height: 40px; position: relative;">
+            <div style="height: 2px; background-color: #e2e8f0; position: absolute; top: 5px; width: 100%; z-index: 1;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 6px; margin: 0 auto; z-index: 2; position: relative; background-color: #14b8a6; box-shadow: 0 0 0 4px #ccfbf1;"></div>
+          </div>
+          <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 12px;">Reviewing</div>
+          <div style="font-size: 11px; color: #14b8a6; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">In Progress</div>
+        </td>
+        <td style="width: 33.33%; vertical-align: top; text-align: center;">
+          <div style="height: 40px; position: relative;">
+            <div style="height: 2px; background-color: #e2e8f0; position: absolute; top: 5px; right: 50%; width: 50%; z-index: 1;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 6px; margin: 0 auto; z-index: 2; position: relative; background-color: #e2e8f0;"></div>
+          </div>
+          <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 12px;">Verified</div>
+          <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Pending</div>
         </td>
       </tr>
     </table>
-  </body>
-</html>
+
+    <div style="background-color: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 24px; padding: 32px; text-align: left;">
+      <p style="font-size: 15px; line-height: 1.6; font-weight: 600; color: #0f766e; margin: 0;">
+        You'll receive an email as soon as the review is complete.
+        Usually, this takes less than 24 hours.
+      </p>
+    </div>
+  </td>
+</tr>

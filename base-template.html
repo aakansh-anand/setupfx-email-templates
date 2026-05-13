@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <style type="text/css">
+      /* ===== FONT IMPORT ===== */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+      /* ===== GLOBAL RESETS ===== */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0fdfa;
+        font-family: "Inter", Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* ===== GLOBAL TYPOGRAPHY ===== */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      td,
+      th,
+      a,
+      span,
+      div,
+      li {
+        font-family: "Inter", Arial, sans-serif;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 16px;
+        letter-spacing: -0.5px;
+        text-align: left;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 16px;
+      }
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #475569;
+        margin: 0 0 16px;
+        text-align: left;
+      }
+
+      /* ===== LAYOUT STRUCTURE ===== */
+      .wrapper {
+        width: 100%;
+        background-color: #f0fdfa;
+      }
+      .container {
+        padding: 60px 0;
+      }
+      .main-table {
+        width: 600px;
+        background-color: #ffffff;
+        border-radius: 40px;
+        border: 1px solid #ccfbf1;
+        box-shadow: 0 30px 60px -12px rgba(20, 184, 166, 0.12);
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      /* ===== HEADER ===== */
+      .header-logo {
+        padding: 48px 48px 0;
+        text-align: left;
+      }
+      .logo-link {
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.5px;
+        display: inline-block;
+      }
+      .logo-teal {
+        color: #14b8a6;
+        margin-left: 2px;
+      }
+
+      /* ===== CONTENT AREA ===== */
+      .content-padding {
+        padding: 48px 64px;
+        text-align: left;
+      }
+
+      /* ===== COMMON CONTENT CLASSES ===== */
+      .greeting {
+        padding-top: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #0f172a;
+        margin: 0 0 12px;
+      }
+      .p-main {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #475569;
+        margin: 0 0 32px;
+      }
+      .p-note {
+        font-size: 14px;
+        color: #94a3b8;
+        margin: 0;
+      }
+
+      /* ===== ICON BOX ===== */
+      .icon-box {
+        width: 80px;
+        height: 80px;
+        border-radius: 30px;
+        display: inline-block;
+        line-height: 80px;
+        text-align: center;
+      }
+      .icon-box span {
+        font-size: 40px;
+      }
+
+      /* ===== DETAILS TABLE ===== */
+      .details-box {
+        background-color: #f8fafc;
+        border: 1px solid #f1f5f9;
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+      }
+      .detail-label {
+        font-size: 13px;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        width: 100px;
+        padding: 8px 0;
+      }
+      .detail-value {
+        font-size: 14px;
+        color: #0f172a;
+        font-weight: 600;
+        padding: 8px 0;
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn-container {
+        margin: 32px 0 40px;
+        text-align: left;
+      }
+      .btn {
+        display: inline-block;
+        padding: 20px 48px;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: "Inter", Arial, sans-serif;
+      }
+      .btn-teal {
+        background-color: #14b8a6;
+      }
+      .btn-navy {
+        background-color: #0f172a;
+        box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+      }
+
+      /* ===== INFO BOX ===== */
+      .info-box {
+        background-color: #f8fafc;
+        border: 1px solid #f1f5f9;
+        border-radius: 24px;
+        padding: 32px;
+      }
+      .info-box p {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ===== REJECTION BOX ===== */
+      .reject-box {
+        background-color: #fef2f2;
+        border: 1px solid #fee2e2;
+        border-radius: 20px;
+        padding: 24px;
+        margin-bottom: 32px;
+        text-align: left;
+      }
+      .reject-label {
+        font-size: 12px;
+        font-weight: 800;
+        color: #ef4444;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .reject-reason {
+        font-size: 14px;
+        color: #b91c1c;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      /* ===== NOTICE BOX ===== */
+      .notice-box {
+        background-color: #f8fafc;
+        border: 1px solid #f1f5f9;
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 48px;
+      }
+      .notice-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #64748b;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .notice-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #94a3b8;
+        margin: 0;
+      }
+
+      /* ===== OTP CODE BOXES ===== */
+      .otp-digit {
+        width: 54px;
+        height: 72px;
+        background-color: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 16px;
+        font-size: 32px;
+        font-weight: 800;
+        color: #14b8a6;
+        line-height: 72px;
+        text-align: center;
+      }
+
+      /* ===== STEPPER ===== */
+      .step-title {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .step-desc {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: #64748b;
+      }
+      .step-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        box-sizing: border-box;
+      }
+      .step-done {
+        background-color: #14b8a6;
+        line-height: 24px;
+        color: #ffffff;
+      }
+      .step-active {
+        background-color: #f0fdfa;
+        border: 2px solid #14b8a6;
+        line-height: 20px;
+        color: #14b8a6;
+      }
+      .step-pending {
+        background-color: #f8fafc;
+        border: 2px solid #e2e8f0;
+        line-height: 20px;
+        color: #94a3b8;
+      }
+
+      /* ===== SIGNATURE ===== */
+      .sig-container {
+        padding: 0 64px 48px;
+      }
+      .sig-table {
+        width: 100%;
+      }
+      .sig-left {
+        padding-bottom: 16px;
+        text-align: left;
+      }
+      .sig-right {
+        text-align: right;
+      }
+      .sig-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 2px;
+      }
+      .sig-email a {
+        color: #14b8a6;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .sig-closing {
+        font-size: 14px;
+        color: #64748b;
+        margin: 0;
+      }
+      .sig-team {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+      }
+
+      /* ===== FOOTER ===== */
+      .copyright {
+        font-size: 12px;
+        color: #cbd5e1;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media only screen and (max-width: 600px) {
+        .main-table {
+          width: 100% !important;
+          border-radius: 0 !important;
+        }
+        .content-padding {
+          padding: 40px 24px !important;
+        }
+        .sig-container {
+          padding: 0 24px 40px !important;
+        }
+        .btn {
+          width: 100% !important;
+          box-sizing: border-box !important;
+          text-align: center !important;
+        }
+        .icon-section {
+          padding: 32px 24px 16px !important;
+        }
+        .otp-digit {
+          width: 44px !important;
+          height: 60px !important;
+          font-size: 24px !important;
+          line-height: 60px !important;
+        }
+        h1 {
+          font-size: 28px !important;
+        }
+      }
+    </style>
+    <!--[if mso]>
+      <style type="text/css">
+        table {
+          mso-table-lspace: 0pt !important;
+          mso-table-rspace: 0pt !important;
+        }
+      </style>
+    <![endif]-->
+  </head>
+  <body>
+    <table
+      role="presentation"
+      class="wrapper"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+    >
+      <tr>
+        <td align="center" class="container">
+          <table
+            class="main-table"
+            role="presentation"
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+          >
+            <!-- Logo Header -->
+            <tr>
+              <td class="header-logo">
+                <a href="#" class="logo-link">
+                  Setup<span class="logo-teal">FX</span>
+                </a>
+              </td>
+            </tr>
+
+            <!-- ========== DYNAMIC CONTENT AREA ========== -->
+            <!-- Reset Password - Content Fragment -->
+            <!-- Injected into base-template.html via {{content}} -->
+
+            <!-- Content -->
+            <tr>
+              <td style="padding: 48px">
+                <h1 style="font-size: 32px; letter-spacing: -1px">
+                  Password Reset
+                </h1>
+                <p class="p-main" style="font-size: 16px; line-height: 1.7">
+                  We received a request to reset the password for your SetupFX
+                  account. Click the button below to choose a new one.
+                </p>
+
+                <div class="btn-container" style="margin: 32px 0 48px">
+                  <a
+                    href="{{reset_link}}"
+                    class="btn"
+                    style="
+                      padding: 22px 64px;
+                      background-color: #0f172a;
+                      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+                    "
+                    >Reset Password</a
+                  >
+                </div>
+
+                <div class="notice-box">
+                  <p class="notice-title">Security Check</p>
+                  <p class="notice-text">
+                    If you didn't request a password reset, you can safely
+                    ignore this email. Your current password will remain active.
+                  </p>
+                </div>
+
+                <p
+                  style="
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: #0f172a;
+                    margin: 0 0 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                  "
+                >
+                  How to stay secure
+                </p>
+                <table
+                  role="presentation"
+                  width="100%"
+                  border="0"
+                  cellspacing="0"
+                  cellpadding="0"
+                  style="margin-bottom: 48px"
+                >
+                  <tr>
+                    <td width="32" valign="top">
+                      <div
+                        style="
+                          width: 32px;
+                          height: 32px;
+                          background-color: #f0fdfa;
+                          border-radius: 50%;
+                          color: #14b8a6;
+                          font-weight: 800;
+                          font-size: 13px;
+                          text-align: center;
+                          line-height: 32px;
+                        "
+                      >
+                        1
+                      </div>
+                    </td>
+                    <td
+                      style="
+                        font-size: 14px;
+                        color: #475569;
+                        padding-left: 16px;
+                        padding-bottom: 24px;
+                      "
+                    >
+                      Never share your password or OTP with anyone, including
+                      SetupFX staff.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="32" valign="top">
+                      <div
+                        style="
+                          width: 32px;
+                          height: 32px;
+                          background-color: #f0fdfa;
+                          border-radius: 50%;
+                          color: #14b8a6;
+                          font-weight: 800;
+                          font-size: 13px;
+                          text-align: center;
+                          line-height: 32px;
+                        "
+                      >
+                        2
+                      </div>
+                    </td>
+                    <td
+                      style="
+                        font-size: 14px;
+                        color: #475569;
+                        padding-left: 16px;
+                        padding-bottom: 24px;
+                      "
+                    >
+                      Always ensure you're visiting the official
+                      <strong>setupfx.com</strong> domain.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="32" valign="top">
+                      <div
+                        style="
+                          width: 32px;
+                          height: 32px;
+                          background-color: #f0fdfa;
+                          border-radius: 50%;
+                          color: #14b8a6;
+                          font-weight: 800;
+                          font-size: 13px;
+                          text-align: center;
+                          line-height: 32px;
+                        "
+                      >
+                        3
+                      </div>
+                    </td>
+                    <td
+                      style="
+                        font-size: 14px;
+                        color: #475569;
+                        padding-left: 16px;
+                      "
+                    >
+                      Enable Two-Factor Authentication (2FA) for an extra layer
+                      of protection.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- ========== END DYNAMIC CONTENT ========== -->
+
+            <!-- Signature Section -->
+            <tr>
+              <td class="sig-container">
+                <table
+                  role="presentation"
+                  class="sig-table"
+                  border="0"
+                  cellspacing="0"
+                  cellpadding="0"
+                >
+                  <tr>
+                    <td class="sig-left">
+                      <p class="sig-name">{{sender_name}}</p>
+                      <p class="sig-email">
+                        <a href="mailto:chetan@setupfx.com"
+                          >chetan@setupfx.com</a
+                        >
+                      </p>
+                      <p class="sig-closing">Happy investing</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="sig-right">
+                      <p class="sig-team">Team : SetupFX Limited</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Fixed Footer -->
+            <tr>
+              <td style="padding: 0 48px 48px">
+                <p class="copyright">&copy; 2026 SETUPFX LIMITED</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
