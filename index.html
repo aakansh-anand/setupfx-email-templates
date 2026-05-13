@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetupFX Email Template Suite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #14b8a6;
+            --primary-dark: #0f766e;
+            --navy: #0f172a;
+            --bg: #f8fafc;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--navy);
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0 0 10px;
+        }
+        h1 span { color: var(--primary); }
+        .subtitle {
+            color: #64748b;
+            font-size: 18px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 60px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            color: #475569;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px -10px rgba(20, 184, 166, 0.15);
+        }
+        .card h3 {
+            margin: 12px 0 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0 0 20px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #f0fdfa;
+            color: var(--primary-dark);
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag.admin { background: #fef2f2; color: #b91c1c; }
+        .tag.client { background: #eff6ff; color: #1e40af; }
+        .view-link { color: var(--primary); font-size: 13px; font-weight: 700; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Setup<span>FX</span> Design System</h1>
+            <p class="subtitle">Premium Email Template Gallery</p>
+        </header>
+
+        <!-- New Admin Set -->
+        <div class="section-title">Admin Management</div>
+        <div class="grid">
+            <a href="admin-login-alert.html" class="card">
+                <div>
+                    <span class="tag admin">Security</span>
+                    <h3>Admin Login Alert</h3>
+                    <p>New login detection for administrative accounts.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="admin-reset-password.html" class="card">
+                <div>
+                    <span class="tag admin">Auth</span>
+                    <h3>Admin Reset Request</h3>
+                    <p>Password recovery flow specifically for admin users.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="admin-password-changed.html" class="card">
+                <div>
+                    <span class="tag admin">Success</span>
+                    <h3>Admin Pass Changed</h3>
+                    <p>Confirmation for administrative password updates.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+        </div>
+
+        <!-- New Client Set -->
+        <div class="section-title">Client Operations (New)</div>
+        <div class="grid">
+            <a href="client-welcome.html" class="card">
+                <div>
+                    <span class="tag client">Onboarding</span>
+                    <h3>Client Welcome</h3>
+                    <p>Standard welcome email for new client registrations.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="client-login-alert.html" class="card">
+                <div>
+                    <span class="tag client">Security</span>
+                    <h3>Client Login Alert</h3>
+                    <p>Security warning for new device logins on client accounts.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="client-reset-password.html" class="card">
+                <div>
+                    <span class="tag client">Auth</span>
+                    <h3>Client Reset Pass</h3>
+                    <p>Client-facing password reset request.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="client-kyc-approved.html" class="card">
+                <div>
+                    <span class="tag client">Compliance</span>
+                    <h3>KYC Approved</h3>
+                    <p>Notification for successful identity verification.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="client-kyc-rejected.html" class="card">
+                <div>
+                    <span class="tag client">Compliance</span>
+                    <h3>KYC Rejected</h3>
+                    <p>Notification for document rejection with reasons.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+        </div>
+
+        <!-- System & Original Templates -->
+        <div class="section-title">Core System Templates</div>
+        <div class="grid">
+            <a href="email-verification.html" class="card">
+                <div>
+                    <span class="tag">Auth</span>
+                    <h3>Verification Code</h3>
+                    <p>The premium 6-digit OTP verification template.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="registration-confirmation.html" class="card">
+                <div>
+                    <span class="tag">Onboarding</span>
+                    <h3>Reg. Confirmation</h3>
+                    <p>The original detailed registration confirmation.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="update-password-confirmation.html" class="card">
+                <div>
+                    <span class="tag">Security</span>
+                    <h3>Update Confirm</h3>
+                    <p>The original password update success template.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="kyc-verification.html" class="card">
+                <div>
+                    <span class="tag">Compliance</span>
+                    <h3>KYC Badge View</h3>
+                    <p>Original badge-style KYC approval template.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="kyc-documents-submitted.html" class="card">
+                <div>
+                    <span class="tag">Compliance</span>
+                    <h3>KYC Submitted</h3>
+                    <p>Timeline-based progress view for KYC submissions.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+            <a href="reset-password.html" class="card">
+                <div>
+                    <span class="tag">Auth</span>
+                    <h3>Standard Reset</h3>
+                    <p>Original standard password reset template.</p>
+                </div>
+                <span class="view-link">View Template →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
